@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "bootstrap/base.html"  %}
+{%- block head %}
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% include 'Guide.html' %}
-    <h1 style="color:slateblue;">建模</h1>
-</body>
-</html>
+    <title>建模</title>
+    <style>.div1{margin-left:77px}</style>
+{%- endblock head %}
+{% block body -%}
+    {% include 'bootstrap/Guide.html' %}
+    <div class="div1"><h1 style="color:black">建模</h1></div>
+    {% block content -%}
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+            <img src="/static/RF.jpg" width="300" height="200" />
+          <h2>随机森林</h2>
+          <p>随机森林就是通过集成学习的思想将多棵树集成的一种算法，它的基本单元是决策树，而它的本质属于机器学习的一大分支——集成学习（Ensemble Learning）方法。随机森林的名称中有两个关键词，一个是“随机”，一个就是“森林”。“森林”我们很好理解，一棵叫做树，那么成百上千棵就可以叫做森林了，这样的比喻还是很贴切的，其实这也是随机森林的主要思想--集成思想的体现。</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/static/Cluster.jpg" width="350" height="200"/>
+          <h2>聚类分析</h2>
+          <p>聚类分析是一种无监督学习方法，其目标是学习没有分类标记的训练样本，以揭示数据的内在性质和规律。具体来说，聚类分析要将数据集划分为若干个互不相交的子集，每个子集中的元素在某种度量之下都与本子集内的元素具有更高的相似度。</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img src="/static/ridge.jpeg" width="300" height="200"/>
+            <h2>岭回归</h2>
+          <p>岭回归是一种专用于共线性数据分析的有偏估计回归方法，实质上是一种改良的最小二乘估计法，通过放弃最小二乘法的无偏性，以损失部分信息、降低精度为代价获得回归系数更为符合实际、更可靠的回归方法，对病态数据的拟合要强于最小二乘法。</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    {%- endblock content %}
+{%- endblock body %}
