@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "bootstrap/base.html"  %}
+{%- block head %}
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% include 'Guide.html' %}
-    <h1 style="color:slateblue;">结果分析</h1>
-</body>
-</html>
+    <title>结果分析</title>
+    <style>.div1{margin-left:77px}</style>
+{%- endblock head %}
+{% block body -%}
+    {% include 'bootstrap/Guide.html' %}
+    <div class="div1"><h1 style="color:black">结果分析</h1></div>
+{%- endblock body %}
