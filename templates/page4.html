@@ -1,11 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "bootstrap/base.html"  %}
+{%- block head %}
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% include 'Guide.html' %}
-    <h1 style="color:slateblue;">数据预处理</h1>
-</body>
-</html>
+    <title>数据预处理</title>
+    <style>.div1{margin-left:77px}</style>
+{%- endblock head %}
+{% block body -%}
+    {% include 'bootstrap/Guide.html' %}
+    <div class="div1"><h1 style="color:black">数据预处理</h1></div>
+     <div class="page-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0" style="font-size: 23px;margin-top:5px;">数据预处理</h3>
+                    </div>
+
+                </div>
+
+                <div class="row" id="row">
+                    <div class="col-12" id="col">
+
+                        <div class="card" >
+                                <div class="card-block" height=150px;>
+
+                                    <div id="area" style="border:2px dashed lightgray; border-radius: 8px;">
+                                        <br><br>
+
+                                        <p style="text-align: center; margin-bottom:0px; cursor: pointer;">
+                                        <!-- 上传文件 -->
+                                        <form method="post" enctype="multipart/form-data" style="text-align: center;">
+                                            <input type="file" name="file" id="file" style="width:230px;" >
+                                        </form>
+                                        </p>
+                                        <br>
+                                        <br>
+                                      </div>
+                                </div>
+                            </div>
+
+                            <div class="card" >
+                                <!-- 变量类型选择框 -->
+                                <div class="card-block" height=150px;>
+                                    选择变量类型：<select style="width:150px; color:#607d8b;" id="type">
+                                        <option value ="uni">连续型</option>
+                                        <option value ="proc">离散型</option>
+                                    </select>
+                                        <a class="btn waves-effect waves-light btn-warning hidden-md-down" id="determine" style="margin-left:20px;">确定</a>
+                                </div>
+                            </div>
+                            <!-- 输入方法选择框 -->
+                            <div class="card" id="uni_part">
+                                <div class="card-block" height=150px; >
+                                    选择输入方法：<select style="width:150px; color:#607d8b; margin-bottom: 10px;" id="input">
+                                            <option value ="direct">直接填写</option>
+                                            <option value ="csv">导入csv文件</option>
+                                    </select>
+                                    <!-- 上传csv -->
+                                    <p style=" margin-bottom:0px; cursor: pointer;" id="csv">
+                                            上传连续型变量的极值及缺失值处理设置（csv文件）
+                                            <form method="post" enctype="multipart/form-data" style="margin-top:10px;" >
+                                                <input type="file" name="file" id="csv_input" style="width:230px;" >
+                                            </form>
+                                    </p>
+                                    <p style=" margin-bottom:0px; cursor: pointer;" id="direct">
+                                        <div class="table-responsive" id="direct_table">
+                                            <!-- 直接填写的表格 -->
+                                            <table class="table" id="table_d">
+                                                <thead>
+                                                    <tr>
+                                                        <th>变量名</th>
+                                                        <th>最小值</th>
+                                                        <th>最大值</th>
+                                                        <th>缺失值</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 离散型变量设置 -->
+                            <div class="card" id="proc_part">
+                                <div class="card-block" height=150px;>
+                                    可容忍的最低频率：<input type="text" id="freq" style="width:40px; margin-right:5px;">%<br>
+
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                    <a class="btn waves-effect waves-light btn-warning hidden-md-down" id="upload">开始预处理</a>
+                            </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+{%- endblock body %}
