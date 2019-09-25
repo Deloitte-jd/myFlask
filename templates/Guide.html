@@ -1,17 +1,57 @@
-<div>
-    <table>
-        <tr>
-            <td><a href = "/introduction">页面介绍</a></td>
-            <td><a href = "/page1">数据导入</a></td>
-            <td><a href = "/page2">数据整体预览</a></td>
-            <td><a href = "/page3">数据清洗</a></td>
-            <td><a href = "/page4">数据预处理</a></td>
-            <td><a href = "/page5">建模 </a></td>
-            <td><a href = "/page6">结果分析</a></td>
-            <td><a href = "/page7">表格下载</a></td>
-        </tr>
-    </table>
-    <div>
+{% extends "bootstrap/base.html"  %}
+
+{%- block head %}
+    <title>数据分析流程</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {%- block styles %}
+    <!-- Bootstrap -->
+        <!-- 设置导航栏格式！ -->
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+    {%- endblock styles %}
+{%- endblock head %}
+
+{% block body -%}
+    {% block navbar %}
+     <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">导航</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="introduction">页面介绍</a></li>
+                <li><a href="/page1">数据导入</a></li>
+                <li><a href="/page2">数据整体预览</a></li>
+                <li><a href="/page3">数据清洗</a></li>
+                <li><a href="/page4">数据预处理</a></li>
+                <li><a href="/page5">建模</a></li>
+                <li><a href="/page6">结果分析</a></li>
+                <li><a href="/page7">表格下载</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+           <div>
         <img src="/static/Logo.jpeg" width="100" height="100"/>
+           </div>
+      </div>
     </div>
-</div>
+
+    {%- endblock navbar %}
+{%- endblock body %}
